@@ -12,6 +12,8 @@ import org.junit.Assert.*
 class ExampleUnitTest {
     @Test
     fun generateNumber(){
-//        Dice(6)
+        var dice = Dice(6)
+        var diceRoll = dice.roll()
+        assertTrue("The result of the dice rolled isn't in the range from 1 - 6 ", diceRoll in 1..6)
     }
 }
