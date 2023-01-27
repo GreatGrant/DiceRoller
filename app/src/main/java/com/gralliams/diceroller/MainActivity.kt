@@ -22,8 +22,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun rollDice() {
-        var randomInt = Random.nextInt(6) + 1
-        var imageResource = when(randomInt){
+        var dice = Dice(6)
+        var diceRoll = dice.roll()
+
+        var imageResource = when(diceRoll){
             1 -> R.drawable.dice_1
             2 -> R.drawable.dice_2
             3 -> R.drawable.dice_3
@@ -32,5 +34,6 @@ class MainActivity : AppCompatActivity() {
             else -> R.drawable.dice_6
         }
         resultImageView.setImageResource(imageResource)
+        resultImageView.contentDescription = diceRoll.toString()
     }
 }
